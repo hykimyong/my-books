@@ -1,5 +1,5 @@
 import React from 'react'
-import Signin from '../pages/Signin'
+import Signin from '../components/Signin'
 
 export default function SigninContainer() {
   return (
