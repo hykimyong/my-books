@@ -1,13 +1,20 @@
 import { Input,Col,Row,Button } from 'antd';
 import styles from "./Signin.module.css";
+import { useRef } from 'react';
+
 export default function Signin() {
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+
+  const onClick = () => {
+  }
   return (
     <Row align="middle" className={styles.signin_row}>
       <Col span={24}>
         <Row>
           <Col className={styles.signin_contents} span={12}></Col>
           <Col span={12}>
-            <img src='/bg_signin.png' className='signin_bg'/>
+            <img src='/bg_signin.png' alt="Signin" className='signin_bg'/>
             <div className={styles.signin_title}>My Books</div>
             <div className={styles.signin_subtitle}>Please Note YOur Opinion</div>
             <div className={styles.signin_underline}/>
@@ -15,20 +22,22 @@ export default function Signin() {
               <span className={styles.required}> *</span>
             </div>
             <div className={styles.input_area}>
-              <Input placeholder="Email" autoComplete="email" name="email" className={styles.input}/>
+              <Input placeholder="Email" autoComplete="email" name="email" className={styles.input} ref={emailRef}/>
             </div>
             <div className={styles.password_title}>Password
               <span className={styles.required}> *</span>
             </div>
             <div className={styles.input_area}>
-              <Input type="password" autoComplete="current-password" name="email" className={styles.input}/>
+              <Input type="password" autoComplete="current-password" name="email" className={styles.input}  ref={passwordRef}/>
             </div>
             <div className={styles.button_area}>
-              <Button size="large" className={styles.button}>Sign In</Button>
+              <Button size="large" className={styles.button} onClick={onClick}>Sign In</Button>
             </div>
           </Col>
         </Row>
       </Col>
     </Row>
   )
+  
 }
+
